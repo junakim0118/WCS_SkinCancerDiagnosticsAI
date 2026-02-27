@@ -1,3 +1,4 @@
+import AIChatbot from './components/aichatbot'
 import Navbar from './components/navbar'
 import Title from './components/title'
 import Connect from './components/connect'
@@ -9,6 +10,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Title />
+        <AIChatbot />
         {/* Other components like WhyUse, HowItWorks, AIChatbot, TryDiagnostics would go here */}
       </main>
       <Connect />
