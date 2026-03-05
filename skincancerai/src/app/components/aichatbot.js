@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function AIChatbot() {
   const [messages, setMessages] = useState([
-    { role: "assistant", content: "Hi! I can answer questions about skin cancer. What would you like to know?" }
+    { role: "assistant", content: "Hi! I'm Ruby, your skin cancer AI assistant. What would you like to know?" }
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -28,27 +29,57 @@ export default function AIChatbot() {
   };
 
   return (
-    <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
-      <h2>Skin Cancer AI Chatbot</h2>
-      <div style={{ height: "400px", overflowY: "auto", border: "1px solid #ccc", padding: "10px", borderRadius: "8px", marginBottom: "10px" }}>
+    <div style={{ maxWidth: "600px", margin: "40px auto", padding: "20px", fontFamily: "sans-serif" }}>
+      <h2 style={{ marginBottom: "16px" }}>Ask Our AI Chatbot Ruby!</h2>
+      <div style={{ background: "#e8e8e8", borderRadius: "16px", padding: "20px", height: "400px", overflowY: "auto", display: "flex", flexDirection: "column", gap: "16px" }}>
         {messages.map((msg, i) => (
-          <div key={i} style={{ textAlign: msg.role === "user" ? "right" : "left", margin: "8px 0" }}>
-            <span style={{ background: msg.role === "user" ? "#007bff" : "#e0e0e0", color: msg.role === "user" ? "white" : "black", padding: "8px 12px", borderRadius: "16px", display: "inline-block" }}>
+          <div key={i} style={{ display: "flex", alignItems: "flex-end", gap: "10px", flexDirection: msg.role === "user" ? "row-reverse" : "row" }}>
+            {msg.role === "assistant" ? (
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+                alt="Ruby"
+                style={{ width: "40px", height: "40px", borderRadius: "50%", background: "white", padding: "4px" }}
+              />
+            ) : (
+              <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#a0a0d0", display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontWeight: "bold", fontSize: "12px", flexShrink: 0 }}>
+                You
+              </div>
+            )}
+            <div style={{
+              background: msg.role === "user" ? "#7b7fd4" : "white",
+              color: msg.role === "user" ? "white" : "black",
+              padding: "10px 14px",
+              borderRadius: "16px",
+              maxWidth: "75%",
+              lineHeight: "1.5"
+            }}>
               {msg.content}
-            </span>
+            </div>
           </div>
         ))}
-        {loading && <p>Thinking...</p>}
+        {loading && (
+          <div style={{ display: "flex", alignItems: "flex-end", gap: "10px" }}>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+              alt="Ruby"
+              style={{ width: "40px", height: "40px", borderRadius: "50%", background: "white", padding: "4px" }}
+            />
+            <div style={{ background: "white", padding: "10px 14px", borderRadius: "16px" }}>Thinking...</div>
+          </div>
+        )}
       </div>
-      <div style={{ display: "flex", gap: "8px" }}>
+      <div style={{ display: "flex", gap: "8px", marginTop: "12px" }}>
         <input
-          style={{ flex: 1, padding: "8px", borderRadius: "8px", border: "1px solid #ccc" }}
+          style={{ flex: 1, padding: "10px 14px", borderRadius: "24px", border: "1px solid #ccc", outline: "none", fontSize: "14px" }}
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
           placeholder="Ask about skin cancer..."
         />
-        <button onClick={sendMessage} style={{ padding: "8px 16px", borderRadius: "8px", background: "#007bff", color: "white", border: "none", cursor: "pointer" }}>
+        <button
+          onClick={sendMessage}
+          style={{ padding: "10px 20px", borderRadius: "24px", background: "#7b7fd4", color: "white", border: "none", cursor: "pointer", fontSize: "14px" }}
+        >
           Send
         </button>
       </div>
