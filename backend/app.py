@@ -175,6 +175,23 @@ def make_gradcam_overlay(original_img: Image.Image, class_idx: int) -> Optional[
     except Exception:
         return None
 
+# -------------------------
+# GET RECOMMENDATION
+# -------------------------
+def get_recommendation(label: str) -> str:
+    # Keep these roughly the same length (2 sentences each) so they render similarly.
+    if label == "Malignant":
+        return (
+            "This result suggests higher risk. Please seek medical advice promptly, especially if the lesion is new, changing, painful, or bleeding."
+        )
+    elif label == "Benign":
+        return (
+            "This result suggests lower risk. Monitor for changes, and seek medical advice if the lesion becomes new, changing, painful, or bleeding."
+        )
+    else:  # Non-neoplastic
+        return (
+            "This result suggests a non-neoplastic finding. Continue routine monitoring, and seek medical advice if the lesion becomes new, changing, painful, or bleeding."
+        )
 
 # -------------------------
 # PDF REPORT
@@ -203,7 +220,7 @@ def build_pdf(
     )
     styles = getSampleStyleSheet()
     style = styles["Normal"]
-    style.fontSize = 9
+    style.fontSize = 10
     style.alignment = 4
 
     p = Paragraph(disclaimer, style)
@@ -254,10 +271,7 @@ def build_pdf(
     c.setFont("Helvetica-Bold", 11)
     c.drawString(50, y - 10, "Recommendation")
     c.setFont("Helvetica", 10)
-    rec = (
-        "If this lesion is new, changing, painful, bleeding, or you’re worried about it, "
-        "consider booking an appointment with a healthcare professional."
-    )
+    rec = get_recommendation(label)
     p = Paragraph(rec, style)
     p.wrapOn(c, 500, 100)
     p.drawOn(c, 50, y - 45)
@@ -303,10 +317,12 @@ async def predict_json(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail="Could not read image.")
 
     label, conf_pct, probs_dict, _ = predict(img)
+    rec = get_recommendation(label)
     return JSONResponse({
         "label": label,
         "confidence_pct": round(conf_pct, 2),
         "probabilities_pct": {k: round(v, 2) for k, v in probs_dict.items()},
+        "recommendation": rec,
     })
 
 @app.post("/report")

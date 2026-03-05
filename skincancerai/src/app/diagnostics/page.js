@@ -123,9 +123,8 @@ export default function DiagnosticsPage() {
                 <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
                 Upload a skin image for an AI-assisted assessment
                 </h1>
-                <p className="mt-4 max-w-2xl text-white/80">
-                Informational only — not a medical diagnosis. If you’re concerned,
-                contact a licensed healthcare professional.
+                <p className="mt-4 max-w-4xl text-white/80">
+                Informational only — not a medical diagnosis. If you’re concerned, contact a licensed healthcare professional.
                 </p>
             </div>
             </div>
@@ -198,15 +197,15 @@ export default function DiagnosticsPage() {
                 {/* Error message (optional) */}
                 {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
 
-                <div className="rounded-2xl bg-slate-100 border border-slate-200 p-5 flex flex-col gap-4">
+                <div className="mt-3 rounded-2xl bg-slate-100 border border-slate-200 p-5 flex flex-col gap-4 flex-1 justify-between">
                     {/* When result exists */}
                     {result ? (
                     <>
-                        <div className="flex items-center justify-between">
-                        <span className="text-lg font-semibold text-slate-800">Prediction</span>
-                        <span className="text-lg text-slate-700">
-                            {result.label} ({result.confidence_pct}%)
-                        </span>
+                        <div className="flex flex-col min-[480px]:flex-row min-[480px]:items-center min-[480px]:justify-between gap-1">
+                            <span className="text-lg font-semibold text-slate-800">Prediction</span>
+                            <span className="text-lg text-slate-700">
+                                {result.label} ({result.confidence_pct}%)
+                            </span>
                         </div>
 
                         {/* Probability bars */}
@@ -243,11 +242,15 @@ export default function DiagnosticsPage() {
                         <div className="flex items-center justify-between">
                         <span className="text-sm font-semibold text-slate-800">Prediction</span>
                         <span className="text-sm text-slate-500">
-                            {loading ? "Analyzing..." : "—"}
+                            {loading ? "Analyzing..." : ""}
                         </span>
                         </div>
 
                         <div className="mt-4 space-y-3">
+                        <SkeletonRow />
+                        <SkeletonRow />
+                        <SkeletonRow />
+                        <SkeletonRow />
                         <SkeletonRow />
                         <SkeletonRow />
                         <SkeletonRow />
@@ -261,11 +264,14 @@ export default function DiagnosticsPage() {
                     </>
                     )}
                 </div>
-                <div>
-                    <div className="font-semibold text-slate-800 mb-1">Recommendation</div>
-                    If this lesion is new, changing, painful, bleeding, or you’re worried about it,
-                    consider booking an appointment with a healthcare professional.
-                </div>
+                {result && (
+                    <div>
+                        <div className="mt-3 font-semibold text-slate-800 mb-1">Recommendation</div>
+                        <p className="text-sm text-slate-700">
+                            {result.recommendation}
+                        </p>
+                    </div>
+                )}
             </div>
             </div>
         </section>
