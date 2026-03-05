@@ -16,7 +16,7 @@ const Navbar = () => {
                     <li><Link href="#ai-chatbot" className="text-gray-500 hover:text-gray-200">AI Chatbot</Link></li>
                     <li><Link href="#connect" className="text-gray-500 hover:text-gray-200">Connect</Link></li>
                     <li>
-                      <Link href="#try-diagnostics">
+                      <Link href="../diagnostics">
                         <button className="bg-sky-600 hover:bg-sky-700 text-white px-3 py-1 rounded-md">Try Diagnostics</button>
                       </Link>
                     </li>
