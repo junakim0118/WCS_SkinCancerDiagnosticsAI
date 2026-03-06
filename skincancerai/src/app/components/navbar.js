@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const nav = [
   { label: "Why Us", href: "#why-us" },
-  { label: "User Guide", href: "#user-guide" },
+  { label: "ChatBot", href: "#chatbot" },
   { label: "Connect", href: "#connect" },
 ];
 
