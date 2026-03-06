@@ -37,7 +37,7 @@ function Tile({ variant, icon, title, desc }) {
 export default function WhyUs() {
   return (
     <section id="why-us" className="bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mx-auto max-w-6xl px-6 pt-16">
 
         {/* Header */}
         <div className="max-w-xl">
