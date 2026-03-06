@@ -1,7 +1,5 @@
-
-import AIChatbot from './components/aichatbot'
-
 "use client";
+import AIChatbot from './components/aichatbot'
 
 import Navbar from './components/navbar'
 import Title from './components/title'

@@ -7,6 +7,7 @@ const nav = [
   { label: "Why Us", href: "#why-us" },
   { label: "ChatBot", href: "#chatbot" },
   { label: "Connect", href: "#connect" },
+
 ];
 
 export default function Navbar() {
@@ -48,7 +49,7 @@ export default function Navbar() {
             </nav>
 
             <a
-              href="#try"
+              href="#diagnostics"
               className="inline-flex items-center justify-center rounded-xl bg-emerald-900 px-5 py-3 text-[16px] font-semibold text-white hover:bg-emerald-800 transition-colors"
             >
               Try Diagnostic

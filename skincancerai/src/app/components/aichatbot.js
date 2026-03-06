@@ -29,8 +29,8 @@ export default function AIChatbot() {
   };
 
   return (
-    <div style={{ maxWidth: "600px", margin: "40px auto", padding: "20px", fontFamily: "sans-serif" }}>
-      <h2 style={{ marginBottom: "16px" }}>Ask Our AI Chatbot Ruby!</h2>
+    <div style={{ maxWidth: "900px", margin: "40px auto", padding: "20px", fontFamily: "sans-serif" }}>
+      <h2 style={{ marginBottom: "16px", fontSize: "28px", fontWeight: "bold", color: "#333", textAlign: "center" }}>Ask Our AI Chatbot Ruby!</h2>
       <div style={{ background: "#e8e8e8", borderRadius: "16px", padding: "20px", height: "400px", overflowY: "auto", display: "flex", flexDirection: "column", gap: "16px" }}>
         {messages.map((msg, i) => (
           <div key={i} style={{ display: "flex", alignItems: "flex-end", gap: "10px", flexDirection: msg.role === "user" ? "row-reverse" : "row" }}>

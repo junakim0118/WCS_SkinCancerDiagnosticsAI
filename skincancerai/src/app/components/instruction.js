@@ -69,6 +69,13 @@ export default function Instruction() {
             </div>
           ))}
         </div>
+        <br></br>
+        <a
+              href="/diagnostics"
+              className="inline-flex items-center justify-center rounded-xl bg-emerald-900 px-8 py-4 text-[20px] font-semibold text-white hover:bg-emerald-800 transition-colors mt-10 animate-bounce"
+            >
+              Go Try Right Now!
+            </a>
       </div>
     </section>
   );

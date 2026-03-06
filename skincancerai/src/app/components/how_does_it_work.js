@@ -12,7 +12,7 @@ function Stat({ label, value }) {
 export default function HowItWorksModel() {
   return (
     <section id="how-it-works" className="bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mx-auto max-w-6xl px-6 pb-32 pt-16">
         {/* Header */}
         <div id="user-guide" className="mt-16 max-w-2xl">
           <h3 className="text-2xl font-semibold text-slate-900">
@@ -26,7 +26,7 @@ export default function HowItWorksModel() {
         <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-12">
           {/* Left: short highlights */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6">
+            <div className="rounded-2xl border border-slate-300 bg-white p-6">
               <h4 className="text-lg font-semibold text-slate-900">
                 Model Highlights
               </h4>
