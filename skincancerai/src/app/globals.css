@@ -12,6 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 /* Keep your blob background (pure CSS is fine) */
 .blob-bg {
   background:
@@ -21,3 +22,4 @@ body {
     radial-gradient(700px 500px at 90% 85%, rgba(20, 184, 166, 0.25), transparent 55%),
     linear-gradient(180deg, #0f3b33 0%, #0f3b33 55%, #ffffff 56%, #ffffff 100%);
 }
+
