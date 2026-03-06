@@ -1,4 +1,12 @@
+
 "use client";
+
+import Navbar from './components/navbar'
+import Title from './components/title'
+import Connect from './components/connect'
+import WhyUs from './components/why_us'
+import HowItWorksModel from './components/how_does_it_work'
+
 
 import Navbar from './components/navbar';
 import Title from './components/title';
@@ -10,9 +18,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Title />
-        {/* Add other components like WhyUse, HowItWorks, AIChatbot here */}
 
         <Instruction/> 
+
+        <WhyUs />
+        <HowItWorksModel />
+        {/* Other components like WhyUse, HowItWorks, AIChatbot, TryDiagnostics would go here */}
       </main>
       <Connect />
     </>
