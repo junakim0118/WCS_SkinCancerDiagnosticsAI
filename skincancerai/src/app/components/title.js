@@ -32,13 +32,13 @@ export default function Title() {
 
           {/* Buttons */}
           <div className="mt-8 flex justify-center gap-4">
-            <button className="rounded-xl bg-white text-slate-900 px-6 py-3 font-medium shadow hover:bg-slate-100 transition">
+            <a href="#diagnostics" className="rounded-xl bg-white text-slate-900 px-6 py-3 font-medium shadow hover:bg-slate-100 transition inline-block">
               Try Diagnostic
-            </button>
+            </a>
 
-            <button className="rounded-xl border border-white/70 text-white px-6 py-3 font-medium backdrop-blur-sm hover:bg-white/10 transition">
+            <a href="#chatbot" className="rounded-xl border border-white/70 text-white px-6 py-3 font-medium backdrop-blur-sm hover:bg-white/10 transition inline-block">
               Live Chatbot
-            </button>
+            </a>
           </div>
 
         </div>

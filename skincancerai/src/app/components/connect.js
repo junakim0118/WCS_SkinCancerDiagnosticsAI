@@ -32,7 +32,6 @@ export default function Connect() {
           </p>
         </div>
       </div>
-
       <div className="max-w-7xl mt-10 mx-auto px-6">
         <h1 className="text-3xl font-bold mb-12 text-black text-center font-inter">
           Connect with Us

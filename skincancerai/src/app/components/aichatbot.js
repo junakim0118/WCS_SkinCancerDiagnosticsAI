@@ -29,6 +29,7 @@ export default function AIChatbot() {
   };
 
   return (
+    <section id="chatbot" className="bg-white">
     <div style={{ maxWidth: "900px", margin: "40px auto", padding: "20px", fontFamily: "sans-serif" }}>
       <h2 style={{ marginBottom: "16px", fontSize: "28px", fontWeight: "bold", color: "#333", textAlign: "center" }}>Ask Our AI Chatbot Ruby!</h2>
       <div style={{ background: "#e8e8e8", borderRadius: "16px", padding: "20px", height: "400px", overflowY: "auto", display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -84,5 +85,6 @@ export default function AIChatbot() {
         </button>
       </div>
     </div>
+    </section>
   );
 }
