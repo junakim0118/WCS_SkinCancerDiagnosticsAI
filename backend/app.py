@@ -229,18 +229,20 @@ def build_pdf(
 
     # Images (left original, right overlay)
     c.setFont("Helvetica-Bold", 11)
-    c.drawString(50, H - 120, "Image snapshot")
+    c.drawCentredString(W/2, H - 120, "Image snapshot")
 
-    left_img = original_img.convert("RGB").resize((240, 240))
-    c.drawImage(ImageReader(left_img), 50, H - 370, width=240, height=240, mask="auto")
+    img_size = 240
+    center_x = (W - img_size) / 2
 
-    if overlay_img is not None:
-        c.drawString(320, H - 120, "Visual markers (Grad-CAM overlay)")
-        right_img = overlay_img.resize((240, 240))
-        c.drawImage(ImageReader(right_img), 320, H - 370, width=240, height=240, mask="auto")
-    else:
-        c.setFont("Helvetica", 10)
-        c.drawString(320, H - 140, "Visual markers not available.")
+    center_img = original_img.convert("RGB").resize((img_size, img_size))
+    c.drawImage(
+        ImageReader(center_img),
+        center_x,
+        H - 370,
+        width=img_size,
+        height=img_size,
+        mask="auto"
+    )
 
     # Results
     c.setFont("Helvetica-Bold", 12)
