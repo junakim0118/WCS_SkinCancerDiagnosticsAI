@@ -158,14 +158,7 @@ npm run dev
 
 ## 🎯 Why This Project
 
-This project focuses on integrating machine learning into a full-stack application with real-world constraints.
-
-It emphasizes:
-- deploying deep learning models in production environments  
-- designing responsive and intuitive user interfaces  
-- handling image-based inputs and preprocessing  
-- managing system limitations such as memory and compute constraints  
-- building reliable fallbacks (demo mode) for better user experience  
+Early detection is critical in skin cancer outcomes, yet access and delays remain real challenges. This project explores how AI can support faster, more accessible preliminary screening, especially for non-experts.
 
 ---
 
