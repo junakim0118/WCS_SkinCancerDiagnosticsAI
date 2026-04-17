@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Instruction() {
   const steps = [
@@ -70,12 +71,12 @@ export default function Instruction() {
           ))}
         </div>
         <br></br>
-        <a
-              href="/diagnostics"
-              className="inline-flex items-center justify-center rounded-xl bg-emerald-900 px-8 py-4 text-[20px] font-semibold text-white hover:bg-emerald-800 transition-colors mt-10 animate-bounce"
-            >
-              Go Try Right Now!
-            </a>
+          <Link
+            href="../diagnostics"
+            className="inline-flex items-center justify-center rounded-xl bg-emerald-900 px-8 py-4 text-[20px] font-semibold text-white hover:bg-emerald-800 transition-colors mt-10 animate-bounce"
+          >
+            Go Try Right Now!
+          </Link>
       </div>
     </section>
   );
