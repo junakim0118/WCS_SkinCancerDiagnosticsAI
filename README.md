@@ -123,7 +123,7 @@ git lfs pull
 
 ```
 Create a `.env.local` file in the frontend folder:
-GROK_API_KEY=YOURGROKAPIKEY
+GROQ_API_KEY=YOURGROQAPIKEY
 NEXT_PUBLIC_API_BASE=http://127.0.0.1:8000
 NEXT_PUBLIC_DEMO_MODE=false
 ```
