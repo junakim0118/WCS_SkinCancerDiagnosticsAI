@@ -23,7 +23,7 @@ from datetime import datetime
 # -------------------------
 # CONFIG (MATCH NOTEBOOK)
 # -------------------------
-MODEL_PATH = "./Model/model.pth"
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "Model", "model.pth")
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 NUM_CLASSES = 3
@@ -300,7 +300,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
