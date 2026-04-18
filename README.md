@@ -97,8 +97,8 @@ To run the full application (including live PDF generation) locally:
 ### 1. Clone the repository
 
 ```
-git clone https://github.com/marccrasto/SkinCancerAI.git
-cd SkinCancerAI
+git clone https://github.com/junakim0118/WCS_SkinCancerDiagnosticsAI.git
+cd WCS_SkinCancerDiagnosticsAI
 ```
 
 ---
