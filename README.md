@@ -44,7 +44,7 @@ https://skin-cancer-ai-gules.vercel.app
 
 1. Go to the Diagnostics page  
 2. Upload a skin lesion image  
-3. Click **Analyze**  
+3. Click **Analyze** (might take 1-2 minutes for the backend to respond)  
 4. View:
    - Predicted classification  
    - Confidence score  
