@@ -146,7 +146,7 @@ cd skincancerai
 npm install
 npm run build
 npm run dev
-# Open in browser (http://localhost:3000)
+# Open in browser (http://localhost:####)
 ```
 
 ## 🎯 Why This Project
