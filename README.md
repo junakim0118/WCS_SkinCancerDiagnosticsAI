@@ -187,9 +187,9 @@ Early detection is critical in skin cancer outcomes, yet access and delays remai
 Juna Kim
 
 **Directors:**   
-Brian Lee 
-Chelsea Ye 
-Diya Patel
-Kamal Chahal 
-Marc Crasto 
+Brian Lee, 
+Chelsea Ye, 
+Diya Patel,
+Kamal Chahal, 
+Marc Crasto, 
 Raiyan Butt 
