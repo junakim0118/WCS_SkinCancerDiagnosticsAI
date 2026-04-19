@@ -149,6 +149,8 @@ npm run dev
 # Open in browser (http://localhost:3000)
 ```
 
+---
+
 ## 🎯 Why This Project
 
 Early detection is critical in skin cancer outcomes, yet access and delays remain real challenges. This project explores how AI can support faster, more accessible preliminary screening, especially for non-experts.
